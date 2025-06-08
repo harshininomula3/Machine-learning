@@ -1,0 +1,68 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyMGrKuVdptQKCx4KeAnIhE8",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/harshininomula3/Machine-learning/blob/main/multiple%20nueral%20network%20layers\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 2,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "ZPJD9kS7VaU8",
+        "outputId": "d261796b-799f-4299-d8b1-8b8ce58dd653"
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "[[ 0.5031  -1.04185 -2.03875]\n",
+            " [ 0.2434  -2.7332  -5.7633 ]\n",
+            " [-0.99314  1.41254 -0.35655]]\n"
+          ]
+        }
+      ],
+      "source": [
+        "import numpy as np\n",
+        "inputs=[[1,2,3,2.5],[2,5,-1,2],[-1.5,2.7,3.3,-0.8]]\n",
+        "weights=[[0.2,0.8,-0.5,1],[0.5,-0.91,0.26,-0.5],[-0.26,-0.27,0.17,0.87]]\n",
+        "biases=[2,3,0.5]\n",
+        "weights2=[[0.1,-0.14,0.5],[-0.5,0.12,-0.33],[-0.44,0.73,-0.13]]\n",
+        "biases2=[-1,2,-0.5]\n",
+        "inputs_array=np.array(inputs)\n",
+        "weights_array=np.array(weights).T # Transpose weights\n",
+        "biases_array=np.array(biases)\n",
+        "weights2_array=np.array(weights2).T # Correct variable name and transpose weights2\n",
+        "biases2_array=np.array(biases2)\n",
+        "layer1=np.dot(inputs_array,weights_array)+biases_array\n",
+        "layer2_outputs=np.dot(layer1,weights2_array)+biases2_array # Correct variable name\n",
+        "print(layer2_outputs)"
+      ]
+    }
+  ]
+}
